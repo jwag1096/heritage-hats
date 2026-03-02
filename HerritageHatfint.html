@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Heritage Hats</title>
+
+<style>
+body {
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+    margin: 0;
+    background-color: #f4f1ea;
+}
+	#australian {background-color:#EFE3D3;}
+	#panama {background-color:#967259;}
+	#western {background-color: #EFE3D3;}
+
+header {
+    text-align: center;
+    background-color:#492F24;
+    padding: 20px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+#navbar {
+    background-color: #8b6f47;
+    padding: 10px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+#navbar a:hover {
+    color: #ffd700;
+}
+	#navbar{display: flex;
+	justify-content: center;
+	flex-wrap: wrap;}
+	#navbar a{margin: 10px 15px;}
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+.hat-image {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #3e2f1c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+   max-width: 90%;
+	max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+</style>
+<link href="Website/CSS/DDN-336-RS-CSS1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="Website/images/HeritageHatlogo.jpg" alt="Heritage Hat Logo">
+    </div>
+
+    <div id="navbar">
+        <a href="#about">About</a>
+        <a href="#australian">Australian Breeze</a>
+        <a href="#panama">Panama Hat</a>
+        <a href="#western">Western Straw</a>
+    </div>
+</header>
+
+<main>
+
+<section id="about">
+    <h1>About Heritage Hats</h1>
+    <p>
+        Heritage Hats provides quality custom-made and brand name hats in the 
+        Phoenix-Scottsdale-Cave Creek Arizona areas and nationwide.
+    </p>
+</section>
+
+<section id="australian" class="hat-section">
+    <h1>Australian Breeze</h1>
+	<p class="price">$149.99</p>
+	 Durable, weather-resistant hats perfect for desert sun protection.
+    <img src="Website/images/australian-breezer.jpeg" 
+         alt="Australian Hat" 
+         class="hat-image">
+	<button class="buy-btn">Add To Cart</button>
+	
+</section>
+	
+
+<section id="panama" class="hat-section">
+    <h1>Panama Hat</h1>
+	<p class="price">$249.99</p>
+    <p>
+        Traditional lightweight straw hats originally from Ecuador.
+    </p>
+    <img src="Website/images/Panama-Hats.jpeg" 
+         alt="Panama Hat" 
+         class="hat-image">
+	<button class="buy-btn">Add To Cart</button>
+</section>
+
+<section id="western" class="hat-section">
+    <h1>Western Straw</h1>
+	<p class="price">$79.99</p>
+    <p>
+        Classic western cowboy style with sun protection and ventilation.
+    </p>
+    <img src="Website/images/Western-straw.jpeg" 
+         alt="Western Straw" 
+         class="hat-image">
+	<button class="buy-btn">Add To Cart</button>
+</section>
+
+</main>
+
+<footer>
+    <p>Copyright © 2026 DDN-336</p>
+</footer>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+ <img class="modal-content" id="img01" alt="Enlarged hat image">
+</div>
+
+<script>
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var images = document.querySelectorAll(".hat-image");
+var closeBtn = document.getElementsByClassName("close")[0];
+
+images.forEach(function(img){
+	function openModal(){
+		modal.style.display="flex";
+		modalImg.src=img.getAttribute("src");
+	}
+	img.addEventListener("click",openModal);
+	img.addEventListener("touchstart", openModal);
+});
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+</script> 
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to Top">Top</button>
+	<script>
+		
+let mybutton=document.getElementById("myBtn");
+
+
+window.addEventListener("scroll",function(){if(window.scrollY> 20){
+	mybutton.style.display="block";
+	} else{ 
+	mybutton.style.display="none";
+	}}); 
+
+function topFunction() {
+ document.body.scrollTop=0;document.documentElement.scrollTop=0;}
+</script>
+</body>
+</html>
